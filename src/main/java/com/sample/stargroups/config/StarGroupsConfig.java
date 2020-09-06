@@ -15,7 +15,7 @@ import java.util.List;
 
 public class StarGroupsConfig {
 
-    public static RestTemplate getRestTemplate(){
+    public static RestTemplate getRestTemplate() {
         final List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
         final MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
         converter.setSupportedMediaTypes(Collections.singletonList(MediaType.ALL));
@@ -27,7 +27,7 @@ public class StarGroupsConfig {
     }
 
 
-    public static String postForEntity(final String url, final Fixture fixture){
+    public static String postForEntity(final String url, final Fixture fixture) {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);

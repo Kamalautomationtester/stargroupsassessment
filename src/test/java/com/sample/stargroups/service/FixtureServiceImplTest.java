@@ -1,11 +1,9 @@
 package com.sample.stargroups.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sample.stargroups.dao.Fixture;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -61,8 +59,8 @@ public class FixtureServiceImplTest {
     }
 
     /**
-        Create and delete a new fixture.
-        Assert that the fixture no longer exists.
+     * Create and delete a new fixture.
+     * Assert that the fixture no longer exists.
      */
     @Test
     public void testScenario4() throws IOException {
@@ -70,7 +68,7 @@ public class FixtureServiceImplTest {
         Fixture fixture = TestUtil.getFixture("fixture_template.json");
         fixture.setFixtureId("6");
         fixtureService.createFixture(fixture);
-        fixtureService.deleteFixture("6");// Delete by id not working.
+        fixtureService.deleteFixture("6");
     }
 
 }

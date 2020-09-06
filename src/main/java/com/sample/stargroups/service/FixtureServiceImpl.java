@@ -11,12 +11,12 @@ import static com.sample.stargroups.AppConstants.*;
 
 public class FixtureServiceImpl {
 
-    public String createFixture(final Fixture fixture){
+    public String createFixture(final Fixture fixture) {
         final String url = DOMAIN_URL + STORE_NEW_FIXTURE;
         return StarGroupsConfig.postForEntity(url, fixture);
     }
 
-    public List<Fixture> getAllFixture(){
+    public List<Fixture> getAllFixture() {
         final RestTemplate restTemplate = StarGroupsConfig.getRestTemplate();
         final String url = DOMAIN_URL + GET_ALL;
         Fixture[] fixtures = restTemplate.getForObject(url, Fixture[].class);
@@ -24,14 +24,14 @@ public class FixtureServiceImpl {
     }
 
 
-    public void deleteFixture(String id){
+    public void deleteFixture(String id) {
         final RestTemplate restTemplate = StarGroupsConfig.getRestTemplate();
         String url = DOMAIN_URL + DELETE_BY_ID;
         url = url.replace("{id}", id);
         restTemplate.delete(url);
     }
 
-    public Fixture getFixtureById(final String id){
+    public Fixture getFixtureById(final String id) {
         final RestTemplate restTemplate = StarGroupsConfig.getRestTemplate();
         String url = DOMAIN_URL + GET_BY_ID;
         url = url.replace("{id}", id);
